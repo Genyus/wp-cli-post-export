@@ -123,7 +123,6 @@ class Post_Export_Subcommand extends CommandWithDBObject {
 				$data[] = $post_data;
 			}
 			$page_number++;
-			WP_CLI::log( 'page: ' . $page_number );
 		} while ( ! empty( $posts ) );
 
 		$formatter = new Formatter( $assoc_args, array_merge( array( 'ID', 'post_title', 'post_content' ), $filtered_taxonomies ) );
