@@ -112,7 +112,7 @@ class Post_Export_Subcommand extends CommandWithDBObject {
 				$post_data = array(
 					'ID' => $post->ID,
 					'post_title' => $post->post_title,
-					'post_content' => $post->post_content,
+					'post_content' => wp_strip_all_tags( $post->post_content ),
 				);
 
 				foreach ( $filtered_taxonomies as $taxonomy ) {
